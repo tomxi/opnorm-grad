@@ -1,2 +1,29 @@
-# opnorm-grad
+# OpNorm-Grad
 Drop-in PyTorch layers for robust training on variable-length inputs using operation-count gradient scaling
+
+> This Repo is co-authored with LLMs in their various forms.
+
+### Installation
+
+Clone the repo and `cd` into it; then setup a conda environment with the dependencies:
+```bash
+conda env create -f environment.yml
+conda activate opnorm-grad
+pip install -e .
+```
+
+### Quick Start
+Integrating `OpNormConv1d` into an existing PyTorch or Lightning model is straightforward. Simply replace the standard `torch.nn.Conv1d` with `opnorm_grad.OpNormConv1d`.
+
+The layer accepts all the same arguments as the original `torch.nn.Conv1d`.
+
+### Experimentation
+
+**Goal:** Compare the training stability and final performance of the Skip the Beat data augmentation scheme using the baseline model against using the OpNorm-Grad layers.
+
+**Steps:**
+1.  Dig the old experiment up from the grave.
+2.  Install this `opnorm-grad` package into the environment using the `pip` command above.
+3.  Modify the model definition file (`model.py`) to use `OpNormConv1d` as shown in the Quick Start.
+4.  Run the training script with and without the OpNorm layers, keeping all other hyperparameters constant.
+5.  Log metrics like gradient, loss, and convergence curves for comparison: did this scheme change anything?

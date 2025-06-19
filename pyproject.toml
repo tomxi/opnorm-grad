@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "opnorm-grad"
+version = "0.0.1"
+authors = [
+  { name="Tom Xi", email="tom.xi@nyu.edu" },
+]
+description = "Drop-in PyTorch layers for robust training on variable-length inputs using operation-count gradient scaling"
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+dependencies = [
+    "torch",
+    "numpy",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/tomxi/opnorm-grad"
+"Bug Tracker" = "https://github.com/tomxi/opnorm-grad/issues" 
