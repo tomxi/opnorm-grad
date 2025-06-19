@@ -15,9 +15,19 @@ pip install -e .
 ### Quick Start
 Integrating `OpNormConv1d` into an existing PyTorch or Lightning model is straightforward. Simply replace the standard `torch.nn.Conv1d` with `opnorm_grad.OpNormConv1d`.
 
-The layer accepts all the same arguments as the original `torch.nn.Conv1d`.
+```python
+import opnorm_grad as og
+import torch.nn as nn
 
-### Experimentation
+naive_model = nn.Sequential(
+    nn.Conv1d(in_channels, out_channels, **kwargs)
+)
+og_model = nn.Sequential(
+    og.OpNormConv1d(in_channels, out_channels, **kwargs)
+)
+```
+
+### Experiments
 
 **Goal:** Compare the training stability and final performance of the Skip the Beat data augmentation scheme using the baseline model against using the OpNorm-Grad layers.
 
