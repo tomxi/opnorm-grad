@@ -8,8 +8,8 @@ Drop-in PyTorch layers for robust training on variable-length inputs using opera
 #### Develope
 For developing, clone the repo and `cd` into it; then setup a conda environment with the dependencies:
 ```bash
-git clone https://github.com/tomxi/bnl.git
-cd bnl
+git clone https://github.com/tomxi/opnorm-grad.git
+cd opnorm-grad
 conda env create -f environment.yml
 conda activate opnorm-grad
 pip install -e .
@@ -17,7 +17,7 @@ pip install -e .
 #### Use
 To install the package directly from GitHub and use it in your project, run the following command:
 ```bash
-pip install git+https://github.com/tomxi/bnl.git
+pip install git+https://github.com/tomxi/opnorm-grad.git
 ```
 
 ### Quick Start
